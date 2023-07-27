@@ -12,7 +12,26 @@ You can find here the [slides](https://docs.google.com/presentation/d/1bEFWuwrVf
 Experiment Description
 ----------------------
 
-The experiment aims to measure the energy consumption of a group of servers under different loads. The servers are subjected to different CPU loads using [stress-ng](https://github.com/ColinIanKing/stress-ng), a well-known Linux stressor, and [TrainTicketSystem](https://github.com/FudanSELab/train-ticket), a microservice-based web-service. The energy consumption data is obtained via a [Rittal](https://github.com/GioDoesntKnowCode/Rittal_Power_Monitoring) monitoring system, while the CPU data is obtained via 'lm-sensors' and 'mpstat'. The obtained data is then preprocessed using Python and analysed using Excel.
+The experiment aims to measure the energy consumption of a group of servers under different loads. The experiment is orchestrated with [ExperimentRunner](https://github.com/S2-group/experiment-runner). The servers are subjected to different CPU loads using [stress-ng](https://github.com/ColinIanKing/stress-ng), a well-known Linux stressor, and [TrainTicketSystem](https://github.com/FudanSELab/train-ticket), a microservice-based web-service. The energy consumption data is obtained via a [Rittal](https://github.com/GioDoesntKnowCode/Rittal_Power_Monitoring) monitoring system, while the CPU data is obtained via 'lm-sensors' and 'mpstat'. The obtained data is then preprocessed using Python and analysed using Excel.
+
+Architecture
+--------
+![ExperimentSetup](https://github.com/eguiwow/def-verification/assets/22910746/87cf9e8e-28f4-4d6e-8121-abed32f1166b)
+* Developing System (DS): Linux-based computer where the experiment gets started and is conducted
+* Monitoring System (MS): Linux-based server in charge of monitoring the energy consumption of the SUT.
+* System Under Test (SUT): Linux-based servers in which the experiment is performed, this is, they are stressed through the use of the TTS or stress-ng at different CPU loads for various runs.
+
+Requirements
+--------
+* DS
+  - Experiment Runner (installation instructions in the [repo](https://github.com/S2-group/experiment-runner))
+  - k6 suite ([installation](https://k6.io/docs/get-started/installation/))
+  - Rittal Power monitoring repo ([installation](https://github.com/GioDoesntKnowCode/Rittal_Power_Monitoring))
+* MS
+  - Rittal Power monitoring repo ([installation](https://github.com/GioDoesntKnowCode/Rittal_Power_Monitoring))
+* SUT
+  - Train Ticket System ([installation guide](https://github.com/FudanSELab/train-ticket/wiki/Installation-Guide))
+  - Stress-ng (installation instructions in the [repo](https://github.com/ColinIanKing/stress-ng))
 
 Workflow
 --------
@@ -31,9 +50,12 @@ Running the Experiment (WIP)
 These are the followed steps to run the experiment:
 
 1.  Clone the repository.
-2.  Install the necessary dependencies (e.g., stress-ng, WattsupPro, lm-sensors, mpstat).
-3.  Run stress-ng to subject the server to different loads.
-4.  Collect the energy consumption and CPU data using mpstat and lm-sensors tools.
+2.  Install the necessary dependencies (from Requirements).
+3.  Configure the necessary modifications in the RunnerConfig.py files.
+4.  Execute the experiment by
+```bash
+python experiment-runner/ <MyRunnerConfig.py>
+```
 
 Repository Structure
 --------------------
