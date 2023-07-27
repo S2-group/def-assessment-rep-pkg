@@ -44,17 +44,19 @@ The experiment workflow consists of the following steps:
 4.  The collected data is preprocessed using Python.
 5.  The cleaned data is analysed using Excel
 
-Running the Experiment (WIP)
+Running the Experiment (from DS)
 ----------------------
 
 These are the followed steps to run the experiment:
 
 1.  Clone the repository.
-2.  Install the necessary dependencies (from Requirements).
-3.  Configure the necessary modifications in the RunnerConfig.py files.
-4.  Execute the experiment by
+2.  Install the necessary dependencies in DS (from Requirements).
+3.  Install the necessary dependencies in the SUTs.
+4.  Install the necessary dependencies in the MS.
+5.  Perform the necessary modifications in the RunnerConfig.py files.
+6.  Execute the experiment with
 ```bash
-python experiment-runner/ <MyRunnerConfig.py>
+python experiment-runner/ <SelectedRunnerConfig.py>
 ```
 
 Repository Structure
@@ -62,10 +64,19 @@ Repository Structure
 
 The repository contains the following files and directories:
 
--   `bash_scripts/`: contains the bash scripts used to subject the server to different loads.
--   `preprocessing/`: contains the Python scripts used to preprocess the obtained data.
--   `experiment.log`: info about the experiment.
--   `README.md`: this file.
+- `experiment-runner/`: experiment-runner configuration
+  - `GL2/`: RunnerConfig files and results for experiments on SUT1 (GL2)
+  - `GL5/`: RunnerConfig files and results for experiments on SUT2 (GL5)
+  - `GL6/`: RunnerConfig files and results for experiments on SUT3 (GL6)
+  - `experiment-runner/`: experiment-runner's internal source code
+  - `other_RunnerConfigs_ander/`: old RunnerConfig files
+- `scripts/`: contains all the necessary scripts for the experiment.
+  - `analysis/`: scripts used for the data analysis
+  - `archive/`: old scripts, not in use anymore
+  - `experiment-runner/`: scripts used for running the experiment
+  - `preprocessing/`: scripts that clean and parse the data to the required format
+  - `utils/`: other scripts for auxiliary tasks
+- `README.md`: this file.
 
 
 Feel free to contact me for further requests and to adapt this README file to suit your project's specific needs.
