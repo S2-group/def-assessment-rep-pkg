@@ -1,0 +1,16 @@
+.idea
+*/__pycache__/*
+examples/linux-ps-profiling/primer
+examples/linux-powerjoular-profiling/primer
+**/__pycache__/
+**/experiments/
+**/results/
+*/other_RunnerConfigs_ander/
+*/.DS_Store
+.DS_Store
+.vscode
+.python-version
+tmp/
+_trial_temp/
+pycharm-interpreter.sh
+python
