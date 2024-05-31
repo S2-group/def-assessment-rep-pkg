@@ -8,7 +8,7 @@ Experiment Description
 
 The experiment aims to measure the energy consumption of a group of servers under different loads. The experiment is orchestrated with [ExperimentRunner](https://github.com/S2-group/experiment-runner). The servers are subjected to different CPU loads using [stress-ng](https://github.com/ColinIanKing/stress-ng), a well-known Linux stressor, and [TrainTicketSystem](https://github.com/FudanSELab/train-ticket), a microservice-based web-service. The energy consumption data is obtained via a [Rittal](https://github.com/GioDoesntKnowCode/Rittal_Power_Monitoring) monitoring system, while the CPU data is obtained via 'lm-sensors' and 'mpstat'. The obtained data is then preprocessed using Python and analysed using Excel.
 
-Architecture
+Experimental Setting
 --------
 ![ExperimentSetup](https://github.com/eguiwow/def-verification/assets/22910746/87cf9e8e-28f4-4d6e-8121-abed32f1166b)
 * Developing System (DS): Linux-based computer where the experiment gets started and is conducted
