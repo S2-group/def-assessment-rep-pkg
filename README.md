@@ -73,4 +73,4 @@ The repository contains the following files and directories:
 - `README.md`: this file.
 
 
-Feel free to contact me for further requests and to adapt this README file to suit your project's specific needs.
+Feel free to contact us for further requests and to adapt this README file to suit your project's specific needs.
