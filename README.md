@@ -1,13 +1,7 @@
 def-verification
 ====================================
 
-This repository hosts the replication package of the master's thesis:  "An independent verification and improvement proposal of the Digital Environmental Footprints formulas from the SDIA". This study consists of an  experiment that stresses a set of servers to certain CPU loads in realistic and synthetic workload scenarios to measure their energy consumption. Later, the obtained results are compared against the predictions from the DEF (Digital Environmental Formulas) from SDIA for those servers.
-
-The aim of this experiment is to independently verify the validity of DEF formulas to model real systems.
-
-Explanatory slides
-----------------------
-You can find here the [slides](https://docs.google.com/presentation/d/1bEFWuwrVfh1EOHOaQKpiMk8k0XHbNL4rB-iwBPBWa_Q/edit?usp=sharing). More detailed info about the experiment details can be found in the appendix section of the presentation.
+This repository hosts the replication package of the empirical study titled:  "An empirical assessment and improvement of the Digital Environmental Footprint formulas for server-side software".
 
 Experiment Description
 ----------------------
